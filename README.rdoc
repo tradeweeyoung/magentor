@@ -8,17 +8,17 @@ Magento api documentation: http://www.magentocommerce.com/support/magento_core_a
 Setup your connection to magento
 
   Magento::Base.connection = Magento::Connection.new({
-    :username => 'username', 
-    :api_key => 'api_key', 
-    :host => 'magento.example.org', 
-    :path => '/magento/api/xmlrpc', 
+    :username => 'username',
+    :api_key => 'api_key',
+    :host => 'magento.example.org',
+    :path => '/magento/api/xmlrpc',
     :port => '80'
   })
 
 Then get down to business
 
   Magento::Customer.list
-  Magento::Product.info(1).sku
+  Magento::Product.find(1).sku
   customer = Magento::Customer.find(:first, {:email => 'example@magentor.ccc'})
   customer.update_attributes({:firstname => 'duke', :lastname => 'magentor'})
   customer.delete

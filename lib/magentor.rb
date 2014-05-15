@@ -3,7 +3,7 @@
 # Author::    Preston Stuteville  (mailto:preston.stuteville@gmail.com)
 # License::   MIT
 #
-# Inspiration from the Magento plugin from Tim Matheson (http://github.com/timmatheson/Magento) 
+# Inspiration from the Magento plugin from Tim Matheson (http://github.com/timmatheson/Magento)
 
 require "active_support/inflector"
 require "logger"
@@ -16,6 +16,8 @@ XMLRPC::Config.send(:const_set, :ENABLE_NIL_CREATE, true)
 
 require 'magento/connection'
 require 'magento/base'
+require 'magento/helpers/collection'
+require 'magento/helpers/crud'
 
 module Magento
   autoload :CategoryAttribute,   "magento/category_attribute"

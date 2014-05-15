@@ -8,7 +8,9 @@ module Magento
   # 105  Category not deleted. Details in error message.
   # 106  Requested product is not assigned to category.
   class Category < Base
+    extend Magento::Helpers::Crud
     class << self
+      undef :find, :all
       # catalog_category.create
       # Create new category and return its id.
       #
@@ -24,46 +26,6 @@ module Magento
         record = new(attributes)
         record.id = id
         record
-      end
-
-      # catalog_category.info
-      # Retrieve category data
-      #
-      # Return: array
-      #
-      # Arguments:
-      #
-      # int $categoryId - category ID
-      # mixed $storeView - store view id or code (optional)
-      # array $attributes - return only specified attributes (optional)
-      def info(*args)
-        new(commit("info", *args))
-      end
-
-      # catalog_category.update
-      # Update category
-      #
-      # Return: boolean
-      #
-      # Arguments:
-      #
-      # int $categoryId - ID of category for updating
-      # array $categoryData - category data ( array(’attribute_code’⇒‘attribute_value’ )
-      # mixed storeView - store view ID or code (optional)
-      def update(*args)
-        commit("update", *args)
-      end
-
-      # catalog_category.delete
-      # Delete category
-      #
-      # Return: boolean
-      #
-      # Arguments:
-      #
-      # int $categoryId - category ID
-      def delete(*args)
-        commit("delete", *args)
       end
 
       # catalog_category.currentStore
@@ -176,40 +138,6 @@ module Magento
       def remove_product(*args)
         commit("removeProduct", *args)
       end
-
-      def find_by_id(id)
-        info(id)
-      end
-    end
-
-    def delete
-      self.class.delete(self.id)
-    end
-
-    def update_attribute(name, value)
-      @attributes[name] = value
-      self.class.update(self.id, Hash[*[name.to_sym, value]])
-    end
-
-    def update_attributes(attrs)
-      attrs.each_pair { |k, v| @attributes[k] = v }
-      self.class.update(self.id, attrs)
-    end
-
-    def assigned_products(*args)
-      self.class.assigned_products(self.id, *args)
-    end
-
-    def assign_product(*args)
-      self.class.assign_product(self.id, *args)
-    end
-
-    def update_product(*args)
-      self.class.update_product(self.id, *args)
-    end
-
-    def remove_product(*args)
-      self.class.remove_product(self.id, *args)
     end
   end
 end
