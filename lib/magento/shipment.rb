@@ -6,6 +6,13 @@ module Magento
   # 103  Requested order not exists.
   # 104  Requested tracking not exists.
   # 105  Tracking not deleted. Details in error message.
+  # list
+  # info
+  # create
+  # addComment
+  # addTrack
+  # removeTrack
+  # getCarriers
   class Shipment < Base
     extend Magento::Helpers::Crud
     class << self

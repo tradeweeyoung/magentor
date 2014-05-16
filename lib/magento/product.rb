@@ -4,6 +4,15 @@ module Magento
   # 101  Product not exists.
   # 102  Invalid data given. Details in error message.
   # 103  Product not deleted. Details in error message.
+  # currentStore
+  # list
+  # info
+  # create
+  # update
+  # setSpecialPrice
+  # getSpecialPrice
+  # delete
+  # listOfAdditionalAttributes
   class Product < Base
     extend Magento::Helpers::Crud
     class << self

@@ -4,10 +4,16 @@ module Magento
   # 101  Product not exists.
   # 102  Invalid data given. Details in error message.
   # 104  Product link not removed.
+  # list
+  # assign
+  # update
+  # remove
+  # types
+  # attributes
   class ProductLink < Base
     extend Magento::Helpers::Crud
     class << self
-      undef :find, :find_by_id, :info, :all
+      undef :find
       # catalog_product_link.assign
       # Assign product link
       #

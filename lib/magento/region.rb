@@ -1,5 +1,6 @@
 module Magento
   # http://www.magentocommerce.com/wiki/doc/webservices-api/api/directory_region
+  # list
   class Region < Base
     extend Magento::Helpers::Collection
     class << self

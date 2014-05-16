@@ -6,10 +6,14 @@ module Magento
     # 101  Invalid filters given. Details in error message.
     # 102  Invalid data given. Details in error message.
     # 103  Order status not changed. Details in error message.
+    # list
+    # info
+    # addComment
+    # hold
+    # unhold
+    # cancel
 
     class << self
-      undef :create, :update, :destroy, :find_by_id, :find
-
       # sales_order.addComment
       # Add comment to order
       #

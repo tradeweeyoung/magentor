@@ -3,10 +3,12 @@ module Magento
   # 100  Product not exists.
   # 101  Invalid data given. Details in error message.
   # 102  Tier prices not updated. Details in error message.
+  # info
+  # update
   class ProductTierPrice < Base
     extend Magento::Helpers::Crud
     class << self
-      undef :create, :destroy, :find
+      undef :create, :destroy, :all, :where
     end
 
     # def update_attribute(name, value)

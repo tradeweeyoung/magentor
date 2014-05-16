@@ -4,6 +4,11 @@ module Magento
   # 101  Invalid filters specified. Details in error message.
   # 102  Customer does not exist.
   # 103  Customer not deleted. Details in error message.
+  # list
+  # create
+  # info
+  # update
+  # delete
   class Customer < Base
     extend Magento::Helpers::Crud
 

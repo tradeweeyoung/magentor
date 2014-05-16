@@ -7,6 +7,19 @@ module Magento
   # 104  Category not moved. Details in error message.
   # 105  Category not deleted. Details in error message.
   # 106  Requested product is not assigned to category.
+  # currentStore
+  # tree
+  # level
+  # info
+  # create
+  # update
+  # move
+  # delete
+  # assignedProducts
+  # assignProduct
+  # updateProduct
+  # removeProduct
+
   class Category < Base
     extend Magento::Helpers::Crud
     class << self

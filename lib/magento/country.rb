@@ -1,5 +1,6 @@
 module Magento
   # http://www.magentocommerce.com/wiki/doc/webservices-api/api/directory_country
+  # list
   class Country < Base
     extend Magento::Helpers::Collection
     class << self

@@ -4,6 +4,11 @@ module Magento
   # 101  Customer not exists.
   # 102  Address not exists.
   # 103  Address not deleted. Details in error message.
+  # list
+  # create with customer id
+  # info
+  # update
+  # delete
   class CustomerAddress < Base
     extend Magento::Helpers::Crud
     class << self
@@ -25,7 +30,7 @@ module Magento
     end
 
     def country
-      Magento::Country.find_by_id(self.country_id)
+      Magento::Country.find(self.country_id)
     end
 
     def region

@@ -8,6 +8,13 @@ module Magento
   # 105  Image not updated. Details in error message.
   # 106  Image not removed. Details in error message.
   # 107  Requested product doesn’t support images
+  # currentStore
+  # list
+  # info
+  # types
+  # create
+  # update
+  # remove
   class ProductMedia < Base
     extend Magento::Helpers::Crud
     class << self

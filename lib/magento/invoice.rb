@@ -5,6 +5,12 @@ module Magento
   # 102  Invalid data given. Details in error message.
   # 103  Requested order does not exists
   # 104  Invoice status not changed.
+  # list
+  # info
+  # create
+  # addComment
+  # capture
+  # cancel
   class Invoice < Base
     extend Magento::Helpers::Crud
     class << self
