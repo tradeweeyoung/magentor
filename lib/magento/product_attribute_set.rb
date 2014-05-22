@@ -1,4 +1,4 @@
-module Magento ##TODO
+module MagentoAPI ##TODO
   # http://www.magentocommerce.com/wiki/doc/webservices-api/api/catalog_product_attribute_set
   # list
   # attributeAdd
@@ -9,6 +9,10 @@ module Magento ##TODO
   # groupRename
   # remove
   class ProductAttributeSet < Base
-    extend Magento::Helpers::Collection
+    extend MagentoAPI::Helpers::Crud
+    class << self
+      undef :update, :find
+    end
+
   end
 end

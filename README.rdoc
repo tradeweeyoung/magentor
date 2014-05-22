@@ -1,13 +1,13 @@
 = Magentor
-Simple wrapper for the Magento XMLRPC api
+Simple wrapper for the MagentoAPI XMLRPC api
 
-Magento api documentation: http://www.magentocommerce.com/support/magento_core_api
+MagentoAPI api documentation: http://www.magentocommerce.com/support/magento_core_api
 
 
 = Usage
 Setup your connection to magento
 
-  Magento::Base.connection = Magento::Connection.new({
+  MagentoAPI::Base.connection = MagentoAPI::Connection.new({
     :username => 'username',
     :api_key => 'api_key',
     :host => 'magento.example.org',
@@ -17,9 +17,9 @@ Setup your connection to magento
 
 Then get down to business
 
-  Magento::Customer.list
-  Magento::Product.find(1).sku
-  customer = Magento::Customer.find(:first, {:email => 'example@magentor.ccc'})
+  MagentoAPI::Customer.list
+  MagentoAPI::Product.find(1).sku
+  customer = MagentoAPI::Customer.find(:first, {:email => 'example@magentor.ccc'})
   customer.update_attributes({:firstname => 'duke', :lastname => 'magentor'})
   customer.delete
 

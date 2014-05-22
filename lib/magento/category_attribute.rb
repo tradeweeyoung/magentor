@@ -1,4 +1,4 @@
-module Magento
+module MagentoAPI
   # http://www.magentocommerce.com/wiki/doc/webservices-api/api/catalog_category_attribute
   # 100  Requested store view not found.
   # 101  Requested attribute not found.
@@ -6,7 +6,7 @@ module Magento
   # list
   # options
   class CategoryAttribute < Base
-    extend Magento::Helpers::Collection
+    extend MagentoAPI::Helpers::Collection
 
     class << self
       # catalog_category_attribute.currentStore

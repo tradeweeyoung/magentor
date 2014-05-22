@@ -1,4 +1,4 @@
-module Magento
+module MagentoAPI
   # http://www.magentocommerce.com/wiki/doc/webservices-api/api/customer
   # 100  Invalid customer data. Details in error message.
   # 101  Invalid filters specified. Details in error message.
@@ -10,10 +10,10 @@ module Magento
   # update
   # delete
   class Customer < Base
-    extend Magento::Helpers::Crud
+    extend MagentoAPI::Helpers::Crud
 
     def addresses
-      Magento::CustomerAddress.list(self.id)
+      MagentoAPI::CustomerAddress.list(self.id)
     end
 
     def update_attribute(name, value)

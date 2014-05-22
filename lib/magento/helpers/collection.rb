@@ -1,4 +1,4 @@
-module Magento
+module MagentoAPI
   module Helpers
     module Collection
       # record.all

@@ -1,4 +1,4 @@
-module Magento
+module MagentoAPI
   # http://www.magentocommerce.com/wiki/doc/webservices-api/api/catalog_product
   # 100  Requested store view not found.
   # 101  Product not exists.
@@ -14,7 +14,7 @@ module Magento
   # delete
   # listOfAdditionalAttributes
   class Product < Base
-    extend Magento::Helpers::Crud
+    extend MagentoAPI::Helpers::Crud
     class << self
       # Return: int
       #

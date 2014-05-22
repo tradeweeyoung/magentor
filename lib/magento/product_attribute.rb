@@ -1,4 +1,4 @@
-module Magento ##TODO
+module MagentoAPI ##TODO
   # http://www.magentocommerce.com/wiki/doc/webservices-api/api/catalog_product_attribute
   # 100  Requested store view not found.
   # 101  Requested attribute not found.
@@ -13,7 +13,7 @@ module Magento ##TODO
   # types
   # update
   class ProductAttribute < Base
-    extend Magento::Helpers::Collection
+    extend MagentoAPI::Helpers::Crud
     class << self
       # catalog_product_attribute.currentStore
       # Set/Get current store view

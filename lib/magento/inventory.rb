@@ -1,6 +1,6 @@
-module Magento
+module MagentoAPI
   class Inventory < Base
-    extend Magento::Helpers::Collection
+    extend MagentoAPI::Helpers::Collection
     class << self
       def api_path
         "product_stock"

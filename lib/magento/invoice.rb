@@ -1,4 +1,4 @@
-module Magento
+module MagentoAPI
   # http://www.magentocommerce.com/wiki/doc/webservices-api/api/sales_order_invoice
   # 100  Requested shipment does not exists.
   # 101  Invalid filters given. Details in error message.
@@ -12,7 +12,7 @@ module Magento
   # capture
   # cancel
   class Invoice < Base
-    extend Magento::Helpers::Crud
+    extend MagentoAPI::Helpers::Crud
     class << self
       undef :update, :destroy
 

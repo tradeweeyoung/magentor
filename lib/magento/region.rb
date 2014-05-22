@@ -1,8 +1,8 @@
-module Magento
+module MagentoAPI
   # http://www.magentocommerce.com/wiki/doc/webservices-api/api/directory_region
   # list
   class Region < Base
-    extend Magento::Helpers::Collection
+    extend MagentoAPI::Helpers::Collection
     class << self
       def find_by_country(iso)
         list(iso)

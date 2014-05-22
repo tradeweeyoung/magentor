@@ -1,7 +1,7 @@
-module Magento
+module MagentoAPI
   module Helpers
     module Crud
-      include Magento::Helpers::Collection
+      include MagentoAPI::Helpers::Collection
       # record.create
       # Create record
       #

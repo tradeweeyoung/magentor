@@ -1,4 +1,4 @@
-module Magento
+module MagentoAPI
   # http://www.magentocommerce.com/wiki/doc/webservices-api/api/catalog_category
   # 100  Requested store view not found.
   # 101  Requested website not found.
@@ -21,7 +21,7 @@ module Magento
   # removeProduct
 
   class Category < Base
-    extend Magento::Helpers::Crud
+    extend MagentoAPI::Helpers::Crud
     class << self
       undef :find, :all
       # catalog_category.create

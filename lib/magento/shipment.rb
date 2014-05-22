@@ -1,4 +1,4 @@
-module Magento
+module MagentoAPI
   # http://www.magentocommerce.com/wiki/doc/webservices-api/api/sales_order_shipment
   # 100  Requested shipment not exists.
   # 101  Invalid filters given. Details in error message.
@@ -14,7 +14,7 @@ module Magento
   # removeTrack
   # getCarriers
   class Shipment < Base
-    extend Magento::Helpers::Crud
+    extend MagentoAPI::Helpers::Crud
     class << self
       undef :update, :destroy
       # sales_order_shipment.create
@@ -94,7 +94,7 @@ module Magento
         options.each_pair { |k, v| filters[k] = {:eq => v} }
         results = list(filters)
 
-        raise Magento::ApiError, "100  Requested shipment not exists." if results.blank?
+        raise MagentoAPI::ApiError, "100  Requested shipment not exists." if results.blank?
 
         if find_type == :first
           find(results.first.increment_id)

@@ -51,7 +51,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--main", "README.rdoc", "--inline-source", "--line-numbers"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
-  s.summary = %q{Ruby wrapper for the Magento xmlrpc api}
+  s.summary = %q{Ruby wrapper for the MagentoAPI xmlrpc api}
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION

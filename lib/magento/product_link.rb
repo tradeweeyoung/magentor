@@ -1,4 +1,4 @@
-module Magento
+module MagentoAPI
   # http://www.magentocommerce.com/wiki/doc/webservices-api/api/catalog_product_link
   # 100  Given invalid link type.
   # 101  Product not exists.
@@ -11,7 +11,7 @@ module Magento
   # types
   # attributes
   class ProductLink < Base
-    extend Magento::Helpers::Crud
+    extend MagentoAPI::Helpers::Crud
     class << self
       undef :find
       # catalog_product_link.assign

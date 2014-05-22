@@ -3,7 +3,7 @@
 # Author::    Preston Stuteville  (mailto:preston.stuteville@gmail.com)
 # License::   MIT
 #
-# Inspiration from the Magento plugin from Tim Matheson (http://github.com/timmatheson/Magento)
+# Inspiration from the MagentoAPI plugin from Tim Matheson (http://github.com/timmatheson/Magento)
 
 require "active_support/inflector"
 require "logger"
@@ -19,7 +19,7 @@ require 'magento/base'
 require 'magento/helpers/collection'
 require 'magento/helpers/crud'
 
-module Magento
+module MagentoAPI
   autoload :CategoryAttribute,   "magento/category_attribute"
   autoload :Category,            "magento/category"
   autoload :Country,             "magento/country"

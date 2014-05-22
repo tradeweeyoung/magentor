@@ -1,4 +1,4 @@
-module Magento
+module MagentoAPI
   # http://www.magentocommerce.com/wiki/doc/webservices-api/api/catalog_product_attribute_media
   # 100  Requested store view not found.
   # 101  Product not exists.
@@ -16,7 +16,7 @@ module Magento
   # update
   # remove
   class ProductMedia < Base
-    extend Magento::Helpers::Crud
+    extend MagentoAPI::Helpers::Crud
     class << self
       # catalog_product_attribute_media.remove
       # Remove product image
