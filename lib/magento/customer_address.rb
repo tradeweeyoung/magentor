@@ -30,11 +30,11 @@ module MagentoAPI
     end
 
     def country
-      MagentoAPI::Country.find(self.country_id)
+      @country ||= MagentoAPI::Country.find(self.country_id)
     end
 
     def region
-      MagentoAPI::Region.find_by_country_and_id(self.country_id, self.region_id)
+      @region ||= MagentoAPI::Region.find_by_country_and_id(self.country_id, self.region_id)
     end
 
     def update_attribute(name, value)

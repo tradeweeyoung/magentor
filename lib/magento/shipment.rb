@@ -92,7 +92,7 @@ module MagentoAPI
       def find(find_type, options = {})
         filters = {}
         options.each_pair { |k, v| filters[k] = {:eq => v} }
-        results = list(filters)
+        results = where(filters)
 
         raise MagentoAPI::ApiError, "100  Requested shipment not exists." if results.blank?
 

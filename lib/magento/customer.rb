@@ -13,7 +13,7 @@ module MagentoAPI
     extend MagentoAPI::Helpers::Crud
 
     def addresses
-      MagentoAPI::CustomerAddress.list(self.id)
+      @addresses ||= MagentoAPI::CustomerAddress.where(customer_id: self.id)
     end
 
     def update_attribute(name, value)

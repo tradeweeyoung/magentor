@@ -68,8 +68,10 @@ module MagentoAPI
     end
 
     def order_items
-      self.items.collect do |item|
-        MagentoAPI::OrderItem.new(item)
+      @order_items ||= begin
+        self.items.collect do |item|
+          MagentoAPI::OrderItem.new(item)
+        end
       end
     end
 

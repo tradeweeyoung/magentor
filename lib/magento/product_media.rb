@@ -18,6 +18,11 @@ module MagentoAPI
   class ProductMedia < Base
     extend MagentoAPI::Helpers::Crud
     class << self
+      undef :all, :find, :where
+
+      def find_by_product_id(product_id)
+        commit("list", product_id)
+      end
       # catalog_product_attribute_media.remove
       # Remove product image
       #

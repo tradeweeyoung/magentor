@@ -70,5 +70,13 @@ module MagentoAPI
         commit('getSpecialPrice', *args)
       end
     end
+    def images
+      @images ||= begin
+        MagentoAPI::ProductMedia.find_by_product_id(product_id).map do |attributes|
+          MagentoAPI::ProductMedia.new(attributes)
+        end
+      end
+    end
+
   end
 end
