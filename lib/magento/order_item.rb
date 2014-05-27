@@ -15,11 +15,11 @@ module MagentoAPI
     end
 
     def order
-      @order ||= MagentoAPI::Order.find_by_id(self.order_id)
+      MagentoAPI::Order.find_by_id(self.order_id)
     end
 
     def product
-      @product ||= MagentoAPI::Product.find_by_id_or_sku(self.product_id)
+      MagentoAPI::Product.find_by_id_or_sku(self.product_id)
     end
   end
 end

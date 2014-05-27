@@ -12,13 +12,10 @@ module MagentoAPI
         all.select{ |c| [c['iso2_code'], c['iso3_code']].include? iso }.first
       end
 
-      def all
-        @countries ||= all
-      end
     end
 
     def regions
-      @regions ||= MagentoAPI::Region.find_by_country(self.iso2_code)
+      MagentoAPI::Region.find_by_country(self.iso2_code)
     end
   end
 end
