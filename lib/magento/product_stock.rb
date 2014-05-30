@@ -5,9 +5,14 @@ module MagentoAPI
   # list
   # update
   class ProductStock < Base
-    extend MagentoAPI::Helpers::Crud
     class << self
-      undef :create, :info, :destroy, :find
+      def update(*args)
+        commit("update", *args)
+      end
+
+      def find_many(ids) #or skus
+        commit("list", ids)
+      end
     end
   end
 end

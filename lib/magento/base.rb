@@ -34,29 +34,29 @@ module MagentoAPI
 
     module InstanceMethods
       def initialize(attributes = {})
-        @attributes = attributes.dup
+        @attributes = attributes.dup.deep_symbolize_keys!
       end
 
       # TODO: find out if the id naming is consistent
       def id
-        @attributes["#{self.class.to_s.split('::').last.underscore.downcase}_id"]
+        @attributes["#{self.class.to_s.split('::').last.underscore.downcase}_id".to_sym]
       end
 
       def id=(_id)
-        @attributes["#{self.class.to_s.split('::').last.underscore.downcase}_id"] = _id
+        @attributes["#{self.class.to_s.split('::').last.underscore.downcase}_id".to_sym] = _id
       end
 
       def object_attributes=(new_attributes)
         return if new_attributes.nil?
-        attributes = new_attributes.dup
-        attributes.stringify_keys!
+        attributes = new_attributes.dup.deep
+        attributes.deep_symbolize_keys!
         attributes.each do |k, v|
           send(k + "=", v)
         end
       end
 
       def method_missing(method_symbol, *arguments)
-        method_name = method_symbol.to_s
+        method_name = method_symbol.to_sym
 
         if method_name =~ /(=|\?)$/
           case $1

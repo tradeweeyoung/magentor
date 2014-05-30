@@ -65,20 +65,39 @@ module MagentoAPI
       def cancel(*args)
         commit('cancel', *args)
       end
+
+      def newer_than(date)
+        commit('list',
+          created_at: {from: parse_date(date)}
+        )
+      end
+
+      private
+      def parse_date(date)
+        DateTime.parse(date).strftime("%Y-%m-%d %H:%M:%S")
+      end
     end
 
-    def order_items
+    def order_line_items
       self.items.collect do |item|
-        MagentoAPI::OrderItem.new(item)
+        MagentoAPI::OrderItem.new(item.symbolize_keys!)
       end
     end
 
     def shipping_address
-      MagentoAPI::CustomerAddress.new(@attributes["shipping_address"])
+      MagentoAPI::CustomerAddress.new(@attributes[:shipping_address])
     end
 
     def billing_address
-      MagentoAPI::CustomerAddress.new(@attributes["billing_address"])
+      MagentoAPI::CustomerAddress.new(@attributes[:billing_address])
+    end
+
+    def status_history
+      @attributes[:status_history].map(&:symbolize_keys!)
+    end
+
+    def payment
+      @attributes[:payment]
     end
   end
 end
