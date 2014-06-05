@@ -40,4 +40,5 @@ module MagentoAPI
   autoload :ProductType,         "magento/product_type"
   autoload :Region,              "magento/region"
   autoload :Shipment,            "magento/shipment"
+  autoload :Store,            "magento/store"
 end

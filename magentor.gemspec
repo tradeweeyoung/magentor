@@ -44,6 +44,7 @@ Gem::Specification.new do |s|
      "lib/magento/product_type.rb",
      "lib/magento/region.rb",
      "lib/magento/shipment.rb",
+     "lib/magento/store.rb",
      "lib/magentor.rb",
      "magentor.gemspec"
   ]
