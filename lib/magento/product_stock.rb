@@ -13,6 +13,10 @@ module MagentoAPI
       def find_many(ids) #or skus
         commit("list", ids)
       end
+
+      def find(id)
+        find_many(id).first
+      end
     end
   end
 end

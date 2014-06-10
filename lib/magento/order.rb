@@ -67,14 +67,16 @@ module MagentoAPI
       end
 
       def newer_than(date)
-        commit('list',
-          created_at: {from: parse_date(date)}
-        )
+        commit('list', created_at: { from: parse_date(date) })
       end
 
       private
       def parse_date(date)
-        DateTime.parse(date).strftime("%Y-%m-%d %H:%M:%S")
+        if date.is_a?(String)
+          Time.parse(date)
+        else
+          date
+        end.strftime("%Y-%m-%d %H:%M:%S")
       end
     end
 
