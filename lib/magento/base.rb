@@ -55,8 +55,12 @@ module MagentoAPI
         end
       end
 
+      def respond_to_missing?(method_symbol, include_private = false)
+        method_name =~ /(=|\?)$/ || @attributes.include?(method_symbol) || super
+      end
+
       def method_missing(method_symbol, *arguments)
-        method_name = method_symbol.to_sym
+        method_name = method_symbol.to_s
 
         if method_name =~ /(=|\?)$/
           case $1
@@ -66,8 +70,11 @@ module MagentoAPI
             @attributes[$`]
           end
         else
-          return @attributes[method_name] if @attributes.include?(method_name)
-          super
+          if @attributes.include?(method_symbol)
+            @attributes[method_symbol]
+          else
+            super
+          end
         end
       end
     end
