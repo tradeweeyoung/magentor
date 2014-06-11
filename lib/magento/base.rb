@@ -55,9 +55,9 @@ module MagentoAPI
         end
       end
 
-      def respond_to_missing?(method_symbol, include_private = false)
-        method_name =~ /(=|\?)$/ || @attributes.include?(method_symbol) || super
-      end
+      # def respond_to_missing?(method_symbol, include_private = false)
+      #   method_name =~ /(=|\?)$/ || @attributes.include?(method_symbol) || super
+      # end
 
       def method_missing(method_symbol, *arguments)
         method_name = method_symbol.to_s

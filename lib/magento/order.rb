@@ -99,7 +99,7 @@ module MagentoAPI
     end
 
     def payment
-      @attributes[:payment]
+      OpenStruct.new @attributes[:payment]
     end
   end
 end
