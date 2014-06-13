@@ -40,6 +40,15 @@ module MagentoAPI ##TODO
       def options(*args)
         commit("options", *args)
       end
+
+      def add_option(*args)
+        commit("addOption", *args)
+      end
+
+      def remove_option(*args)
+        commit("removeOption", *args)
+      end
+
     end
   end
 end
