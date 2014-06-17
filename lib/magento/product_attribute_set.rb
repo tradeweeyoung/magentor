@@ -12,6 +12,10 @@ module MagentoAPI ##TODO
     extend MagentoAPI::Helpers::Crud
     class << self
       undef :update, :find
+
+      def create(attributes)
+        commit("create", attributes[:name], attributes[:skeleton_id])
+      end
     end
 
   end
