@@ -16,6 +16,14 @@ module MagentoAPI ##TODO
       def create(attributes)
         commit("create", attributes[:name], attributes[:skeleton_id])
       end
+
+      def group_add(id, name)
+        commit("groupAdd", id, name)
+      end
+
+      def attribute_add(attribute_id, id, group_id)
+        commit("attributeAdd", attribute_id, id, group_id)
+      end
     end
 
   end
