@@ -40,5 +40,13 @@ module MagentoAPI
   autoload :ProductType,         "magento/product_type"
   autoload :Region,              "magento/region"
   autoload :Shipment,            "magento/shipment"
-  autoload :Store,            "magento/store"
+  autoload :Store,               "magento/store"
+
+  def self.logger
+    @logger ||= Logger.new(STDOUT)
+  end
+
+  def self.logger=(logger)
+    @logger = logger
+  end
 end
