@@ -3,7 +3,7 @@ module MagentoAPI
     attr_accessor :session, :config, :logger
 
     def initialize(config = {})
-      @logger ||= Logger.new(STDOUT)
+      @logger = MagentoAPI.logger
       @config = config
       self
     end
