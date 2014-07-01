@@ -33,7 +33,7 @@ Gem::Specification.new do |s|
      "lib/magento/inventory.rb",
      "lib/magento/invoice.rb",
      "lib/magento/order.rb",
-     "lib/magento/order_item.rb",
+     "lib/magento/order_line_item.rb",
      "lib/magento/product.rb",
      "lib/magento/product_attribute.rb",
      "lib/magento/product_attribute_set.rb",

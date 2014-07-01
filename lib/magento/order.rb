@@ -82,7 +82,7 @@ module MagentoAPI
 
     def order_line_items
       self.items.collect do |item|
-        MagentoAPI::OrderItem.new(item.symbolize_keys!)
+        MagentoAPI::OrderLineItem.new(item.symbolize_keys!)
       end
     end
 

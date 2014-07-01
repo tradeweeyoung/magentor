@@ -28,7 +28,7 @@ module MagentoAPI
   autoload :Customer,            "magento/customer"
   autoload :Inventory,           "magento/inventory"
   autoload :Invoice,             "magento/invoice"
-  autoload :OrderItem,           "magento/order_item"
+  autoload :OrderItem,           "magento/order_line_item"
   autoload :Order,               "magento/order"
   autoload :ProductAttribute,    "magento/product_attribute"
   autoload :ProductAttributeSet, "magento/product_attribute_set"
