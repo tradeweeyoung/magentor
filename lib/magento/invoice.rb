@@ -16,6 +16,10 @@ module MagentoAPI
     class << self
       undef :update, :destroy
 
+      def create(*args)
+        commit("create", *args)
+      end
+
       # sales_order_invoice.addComment
       # Add new comment to shipment
       #
