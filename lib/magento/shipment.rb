@@ -17,22 +17,6 @@ module MagentoAPI
     extend MagentoAPI::Helpers::Crud
     class << self
       undef :update, :destroy
-      # sales_order_shipment.create
-      # Create new shipment for order
-      #
-      # Return: string - shipment increment id
-      #
-      # Arguments:
-      #
-      # string orderIncrementId - order increment id
-      # array itemsQty - items qty to ship as associative array (order_item_id ⇒ qty)
-      # string comment - shipment comment (optional)
-      # boolean email - send e-mail flag (optional)
-      # boolean includeComment - include comment in e-mail flag (optional)
-      def create(*args)
-        id = commit("create", *args)
-        find(id)
-      end
 
       # sales_order_shipment.addComment
       # Add new comment to shipment

@@ -16,11 +16,6 @@ module MagentoAPI
     class << self
       undef :update, :destroy
 
-      def create(*args)
-        id = commit("create", *args)
-        find(id)
-      end
-
       # sales_order_invoice.addComment
       # Add new comment to shipment
       #
@@ -82,6 +77,10 @@ module MagentoAPI
       # string invoiceIncrementId - invoice increment id
       def cancel(*args)
         commit('cancel', *args)
+      end
+
+      def api_path
+        "order_invoice"
       end
     end
   end
