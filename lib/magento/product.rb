@@ -16,6 +16,10 @@ module MagentoAPI
   class Product < Base
     extend MagentoAPI::Helpers::Crud
     class << self
+
+      def find_by_sku(sku, store_id)
+        new(commit("info", sku, store_id, {}, "sku"))
+      end
       # Return: int
       #
       # Arguments:
