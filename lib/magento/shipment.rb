@@ -82,7 +82,7 @@ module MagentoAPI
         options.each_pair { |k, v| filters[k] = {:eq => v} }
         results = where(filters)
 
-        raise MagentoAPI::ApiError, "100  Requested shipment not exists." if results.blank?
+        raise MagentoAPI::ApiError, OpenStruct.new(faultCode: 100, faultString: "Requested shipment not exists.") if results.blank?
 
         if find_type == :first
           find(results.first.increment_id)

@@ -83,5 +83,10 @@ module MagentoAPI
     extend ClassMethods
   end
 
-  class ApiError < StandardError; end
+  class ApiError < StandardError
+    def initialize(e)
+      @initial_error = e
+      super("#{e.faultCode} -> #{e.faultString}")
+    end
+  end
 end

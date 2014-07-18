@@ -42,12 +42,11 @@ module MagentoAPI
           client.call_async("call", session, method, args)
         end
       rescue XMLRPC::FaultException => e
-        logger.debug "exception: #{e.faultCode} -> #{e.faultString}"
         if e.faultCode == 5 # Session timeout
           connect!
           retry
         end
-        raise MagentoAPI::ApiError, "#{e.faultCode} -> #{e.faultString}"
+        raise MagentoAPI::ApiError, e
       end
 
       def call_with_caching(method = nil, *args)
