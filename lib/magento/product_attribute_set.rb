@@ -30,6 +30,10 @@ module MagentoAPI ##TODO
           "catalog_product.listOfAdditionalAttributes",
           "simple", id)
       end
+
+      def products(id)
+        MagentoAPI::Product.commit('list', attribute_set_id: id)
+      end
     end
 
   end

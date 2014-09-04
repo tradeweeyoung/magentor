@@ -70,7 +70,8 @@ module MagentoAPI
         commit('list', created_at: { from: parse_date(date) })
       end
 
-      private
+    private
+
       def parse_date(date)
         if date.is_a?(String)
           Time.parse(date)
