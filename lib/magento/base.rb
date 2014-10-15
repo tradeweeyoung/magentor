@@ -34,6 +34,7 @@ module MagentoAPI
 
     module InstanceMethods
       def initialize(attributes = {})
+        attributes = {} if attributes.empty?
         @attributes = attributes.dup.deep_symbolize_keys!
       end
 

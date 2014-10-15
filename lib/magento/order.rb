@@ -88,11 +88,11 @@ module MagentoAPI
     end
 
     def shipping_address
-      MagentoAPI::CustomerAddress.new(@attributes[:shipping_address])
+      MagentoAPI::CustomerAddress.new(resolve_address(:shipping_address, :billing_address))
     end
 
     def billing_address
-      MagentoAPI::CustomerAddress.new(@attributes[:billing_address])
+      MagentoAPI::CustomerAddress.new(resolve_address(:billing_address, :shipping_address))
     end
 
     def status_history
@@ -101,6 +101,10 @@ module MagentoAPI
 
     def payment
       OpenStruct.new @attributes[:payment]
+    end
+
+    def resolve_address(this, that)
+      @attributes[this].presence || @attributes[that].presence || {}
     end
   end
 end
