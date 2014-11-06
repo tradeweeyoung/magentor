@@ -87,5 +87,11 @@ module MagentoAPI
         "order_invoice"
       end
     end
+
+    def invoice_line_items
+      self.items.collect do |item|
+        MagentoAPI::InvoiceLineItem.new(item.symbolize_keys!)
+      end
+    end
   end
 end
