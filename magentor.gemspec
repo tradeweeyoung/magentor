@@ -5,12 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = %q{magentor}
-  s.version = "0.3.3"
+  s.version = "0.3.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Preston Stuteville"]
-  s.date = %q{2010-11-11}
-  s.email = %q{preston.stuteville@gmail.com}
+  s.authors = ["Lachlan Priest"]
+  s.date = %q{2014-11-06}
+  s.email = %q{lachlan@tradegecko.com}
   s.extra_rdoc_files = [
     "README.rdoc"
   ]
@@ -32,6 +32,7 @@ Gem::Specification.new do |s|
      "lib/magento/customer_group.rb",
      "lib/magento/inventory.rb",
      "lib/magento/invoice.rb",
+     "lib/magento/invoice_line_item.rb",
      "lib/magento/order.rb",
      "lib/magento/order_line_item.rb",
      "lib/magento/product.rb",
@@ -48,7 +49,7 @@ Gem::Specification.new do |s|
      "lib/magentor.rb",
      "magentor.gemspec"
   ]
-  s.homepage = %q{http://github.com/pstuteville/magentor}
+  s.homepage = %q{http://github.com/lcpriest/magentor}
   s.rdoc_options = ["--main", "README.rdoc", "--inline-source", "--line-numbers"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}

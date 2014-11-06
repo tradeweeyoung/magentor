@@ -3,9 +3,9 @@ begin
   Jeweler::Tasks.new do |gemspec|
     gemspec.name     = "magentor"
     gemspec.summary  = "Ruby wrapper for the MagentoAPI xmlrpc api"
-    gemspec.email    = "preston.stuteville@gmail.com"
-    gemspec.homepage = "http://github.com/pstuteville/magentor"
-    gemspec.authors  = ["Preston Stuteville"]
+    gemspec.email    = "lachlan@tradegecko.com"
+    gemspec.homepage = "http://github.com/lcpriest/magentor"
+    gemspec.authors  = ["Lachlan Priest"]
 
     gemspec.has_rdoc = true
     gemspec.rdoc_options = ["--main", "README.rdoc", "--inline-source", "--line-numbers"]

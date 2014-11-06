@@ -1,9 +1,10 @@
 # Ruby wrapper for the magento api
 #
-# Author::    Preston Stuteville  (mailto:preston.stuteville@gmail.com)
+# Author::    Lachlan Priest  (mailto:lachlan@tradegecko.com)
 # License::   MIT
 #
 # Inspiration from the MagentoAPI plugin from Tim Matheson (http://github.com/timmatheson/Magento)
+# Inspiration from the MagentoAPI plugin from Preston Stuteville (http://github.com/pstuteville/magentor)
 
 require "active_support/inflector"
 require "logger"
@@ -28,6 +29,7 @@ module MagentoAPI
   autoload :Customer,            "magento/customer"
   autoload :Inventory,           "magento/inventory"
   autoload :Invoice,             "magento/invoice"
+  autoload :InvoiceLineItem,     "magento/invoice_line_item"
   autoload :OrderLineItem,       "magento/order_line_item"
   autoload :Order,               "magento/order"
   autoload :ProductAttribute,    "magento/product_attribute"
