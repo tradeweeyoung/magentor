@@ -85,8 +85,11 @@ module MagentoAPI
   end
 
   class ApiError < StandardError
+    attr_reader :code
+
     def initialize(e)
       @initial_error = e
+      @code = e.faultCode
       super("#{e.faultCode} -> #{e.faultString}")
     end
   end
