@@ -70,6 +70,10 @@ module MagentoAPI
         commit('list', created_at: { from: parse_date(date) })
       end
 
+      def updated_after(date)
+        commit('list', updated_at: { from: parse_date(date) })
+      end
+
     private
 
       def parse_date(date)
