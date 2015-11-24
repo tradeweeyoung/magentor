@@ -17,8 +17,14 @@ module MagentoAPI
     extend MagentoAPI::Helpers::Crud
     class << self
 
+      REQUIRED_ATTRS = [:name, :description, :sku, :price]
+
       def find_by_sku(sku, store_id)
-        new(commit("info", sku, store_id, {}, "sku"))
+        mage_product = new(commit("info", sku, store_id, {}, "sku"))
+        unless REQUIRED_ATTRS.all? { |attrs| mage_product.attributes.keys.include? attrs }
+          mage_product = find(mage_product.attributes[:product_id]) if mage_product.attributes[:product_id]
+        end
+        mage_product
       end
       # Return: int
       #
